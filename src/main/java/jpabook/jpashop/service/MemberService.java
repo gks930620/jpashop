@@ -47,7 +47,9 @@ public class MemberService {
         return memberRepository.findOne(memberId);
     }
 
-
-
-
+    @Transactional
+    public void update(Long id, String name) {
+        Member member= memberRepository.findOne(id);
+        member.setName(name);
+    } // @Trasactional 에 의해서  이 메소드 다 하고 commit => 하는순간 변경감지
 }
