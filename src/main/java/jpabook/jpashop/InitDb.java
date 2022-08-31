@@ -53,6 +53,9 @@ public class InitDb {
             delivery.setAddress(member.getAddress());
             Order order=Order.createOrder(member,delivery,orderItem1,orderItem2);
             em.persist(order);
+
+
+            //이렇게 1일 1 커밋해도 안되는거야?
         }
 
     private Member createMember(String userA, String 서울 , String s, String s2){
